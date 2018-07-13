@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<import src="../../zanui/dist/tab/index.wxml" />
+<view class="pageBackground">
+
+  <view class='t-tabs zan-c-green'>
+    <template is="zan-tab" data="{{...tabs, componentId: 'tab1' }}"></template>
+  </view>
+
+  <view class="t-infos">
+    <info-card info="{{info}}" zan-btn='zan-btn' zan-small='zan-btn--small' zan-danger='zan-btn--danger' zan-icon='zan-icon' zan-icon-location='zan-icon-location' zan-icon-browsing-history='zan-icon-browsing-history' zan-icon-pending-evaluate='zan-icon-pending-evaluate'
+      zan-icon-like-o='zan-icon-like-o' zan-icon-share='zan-icon-share' wx:for="{{infos}}" wx:key="id" wx:for-item="info"></info-card>
+  </view>
+</view>

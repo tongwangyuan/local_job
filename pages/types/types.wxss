@@ -1,0 +1,34 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.zan-icon {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.t-info-header{
+  position: relative;
+}
+.t-info-icon{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.t-info-name{
+  display: inline-block;
+}
+.t-info-name text{
+  display: block;
+}
+.t-info-call{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}

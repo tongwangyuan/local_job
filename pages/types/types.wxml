@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<import src="../../zanui/dist/tab/index.wxml" />
+<view class="">
+  <view class="t-menu clearfix">
+    <view class="t-menu-warp" wx:for="{{menus}}" wx:for-item="menu" wx:key="menuId" bindtap='menuclick' id="{{menu.menuId}}">
+      <view class="zan-icon zan-icon-{{ menu.icon }}" style="color: #ff4343;"></view>
+      <view class="icon-classname">{{ menu.name }}</view>
+    </view>
+  </view>
+
+  <!-- <view>
+  <picker mode="multiSelector" bindcolumnchange="columnchange" bindchange="bindPickerChange" value="{{index}}" range="{{typesArray}}">
+      <view class="picker">
+      当前选择：{{typesArray[index]}}
+    </view>  
+  </picker>
+  </view> -->
+  <view class='t-infos'>
+    <info-card wx:for="{{infos}}" wx:key="id" wx:for-item="info" info="{{info}}"></info-card>
+  </view>
+</view>

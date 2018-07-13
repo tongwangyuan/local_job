@@ -1,0 +1,224 @@
+/* component/infoCard.wxss */
+.whiteBackground{
+  background: white;
+}
+.hide{
+  display: none !important;
+}
+/*-------info----  */
+.t-info-item{
+  margin: 8px 0;
+}
+.t-info-header{
+  position: relative;
+  margin: 5px 0 0 0;
+}
+.t-info-icon{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin:0 10px;
+  vertical-align: middle;
+}
+/* .t-info-type{
+  display: inline-block;
+  color: #6C93BF;
+} */
+
+.t-info-type{
+  display: inline-block;
+  background: #F5FBFF;
+  color: #696969;
+  /* color: #6C93BF; */
+  border: 1px solid #F5FBFF;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin: 2px 5px;
+}
+
+.t-jobName{
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.t-info-name{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+}
+.t-info-name text{
+  display: block;
+  font-size: 12px;
+}
+.t-info-name  .t-info-nikeName {
+    font-weight: 500;
+    font-size: 14px;
+}
+.t-info-call{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 20px;
+  line-height: 20px;
+  padding:0 5px;
+  background:#fff;
+  color:#f44;
+
+}
+.t-btn-apply{
+   height: 20px;
+   line-height: 20px;
+     position: absolute;
+     /* background: #44BB00;
+     color: white; */
+  background:#fff;
+  color:#44BB00;
+  right: 70px;
+  top: 10px;
+  padding: 0 5px;
+
+}
+.t-btn-apply-delete{
+   height: 20px;
+   line-height: 20px;
+     position: absolute;
+     /* background: #44BB00;
+     color: white; */
+  background:#fff;
+  color:#6C93BF;
+  right: 70px;
+  top: 10px;
+  padding: 0 5px;
+
+}
+.t-btn-deletes{
+  height: 20px;
+   line-height: 20px;
+     position: absolute;
+  background:#fff;
+  color:#6C93BF;
+  right: 115px;
+  top: 10px;
+  padding: 0 5px;
+}
+.t-btn-deletes::after{
+  border-color: #6C93BF;
+}
+.t-btn-apply-delete::after{
+  border-color: #6C93BF;
+}
+.t-btn-apply::after{
+  border-color: #44BB00;
+}
+.t-info-body{
+  padding: 5px 10px;
+  font-size: 14px;
+  /* text-indent:20px; */
+}
+.t-info-position{
+  padding:  0  0 0 10px;
+  font-size: 10px;
+  height: 20px;
+  position: relative;
+}
+.t-info-position .zan-icon{
+  display: inline-block;
+   vertical-align: middle; 
+  font-size: 10px;
+  margin: 0px;
+  position: absolute;
+  top: -9px;
+}
+.t-info-position text{
+   vertical-align: middle; 
+   /* margin: 2px 0 0  20px; */
+   margin: 2px 0 0 0px;
+   color: #626A8C;
+}
+.t-info-footer{
+  
+}
+.m-0{
+  margin: 0;
+}
+.w-h-15{
+  width: 12px;
+  height: 15px;
+}
+.f-12{
+  font-size: 12px;
+}
+.icon-m-5{
+  margin: 5px;
+}
+.t-info-footer .view-item{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+}
+.t-info-footer .zan-icon{
+  vertical-align: middle;
+  margin: 5px;
+  font-size: 10px;
+}
+.t-info-footer view text{
+  vertical-align: middle;
+}
+.t-info-comment{
+  padding: 10px;
+  font-size: 14px;
+}
+.t-info-comment-user{
+  color: #596494;
+}
+.t-info-comment-item{
+  position: relative;
+  background: #f5f5f5;
+  padding: 3px;
+  font-size: 13px;
+}
+.t-info-comment-item-text{
+  margin: 0 3px;
+}
+.btn-share{
+  border: none !important;
+  display:inline-block;
+  text-align: center;
+}
+
+.icon-position{
+  position:absolute;
+  top:-9px;
+}
+.info-btn-small{
+  display:inline-block;
+  height:30px;
+  line-height:30px;
+  font-size:12px;
+  margin-right:5px;
+  margin-bottom:0;
+}
+.info-btn-h-20{
+  height: 20px;
+  line-height: 20px;
+  display:inline-block;
+  font-size:12px;
+  margin-right:5px;
+  margin-bottom:0;
+}
+.info-btn-h-20::after{
+  border: none;
+}
+.icon-absolute{
+  position:absolute;
+  top:-13px;
+  left:15px;
+}
+.space-text{
+  white-space:pre-line;
+  word-break:break-all;
+}
+/*------------info end  */

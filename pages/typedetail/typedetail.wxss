@@ -1,0 +1,24 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.t-swiper{
+  width:100%;
+}
+.t-swiper-img{
+  width: 100%;
+}
+.t-menu-warp{
+  width:25%;
+  float: left;
+  text-align: center;
+}
+.zan-icon {
+  font-size: 24px;
+  margin: 20px;
+}

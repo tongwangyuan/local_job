@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "个人信息发表",
+    "usingComponents": {
+      "info-card": "/component/infoCard/infoCard"
+    }
+}

@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container pageBackground">
+  <view class="userinfo">
+    <block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class='personal-info'>
+      <view class='personal-publish'>
+        <text>发表数</text>
+        <text>{{total.publish}}</text>
+      </view>
+      <view class='personal-bowser'>
+        <text>总阅读量</text>
+        <text>{{total.read}}</text>
+      </view>
+      <view class='personal-zan'>
+        <text>总赞数</text>
+        <text>{{total.zan}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="t-infos">
+    <info-card info="{{info}}" canremove="{{canRemove}}"  zan-btn='zan-btn' zan-small='zan-btn--small' zan-danger='zan-btn--danger' zan-icon='zan-icon' zan-icon-location='zan-icon-location' zan-icon-browsing-history='zan-icon-browsing-history' zan-icon-pending-evaluate='zan-icon-pending-evaluate'
+      zan-icon-like-o='zan-icon-like-o' zan-icon-share='zan-icon-share' wx:for="{{infos}}" wx:key="id" wx:for-item="info" bind:refreshData="refreshDatas"></info-card>
+  </view>
+</view>

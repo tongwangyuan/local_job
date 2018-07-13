@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/program/program",
+    "pages/me/me",
+    "pages/typedetail/typedetail",
+    "pages/infodetail/infodetail",
+    "pages/publish/publish",
+    "pages/userinfo/userinfo",
+    "pages/workflow/workflow"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#6DCD8B",
+    "navigationBarTitleText": "本地招聘",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "精彩视频"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "用户中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

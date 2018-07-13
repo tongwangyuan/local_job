@@ -1,0 +1,23 @@
+.personal-info{
+
+}
+.personal-info view{
+  display: inline-block;
+  margin: 5px 0;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.personal-publish{
+  text-align: right;
+  padding:0 5px 0 0 !important;
+}
+.personal-bowser{
+  text-align: center;
+  padding:0 5px!important;
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+}
+.personal-zan{
+  text-align: left;
+  padding:0 0 0 5px !important;
+}

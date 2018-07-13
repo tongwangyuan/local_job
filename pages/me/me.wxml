@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class='setting'>
+    <view class="zan-cell zan-cell--access" bindtap='myInfo'>
+      <view class="zan-cell__bd">我的信息</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+
+    <view class="zan-cell zan-cell--access" bindtap='nearby'>
+      <view class="zan-cell__bd">附近信息</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+
+    <view class="zan-cell zan-cell--access" bindtap='gotoVideo'>
+      <view class="zan-cell__bd">精彩视频</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+
+    <view class="zan-cell zan-cell--access hide" bindtap='setting'>
+      <view class="zan-cell__bd">设置</view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+</view>

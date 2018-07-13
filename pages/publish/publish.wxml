@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<import src="../../zanui/dist/switch/index.wxml" />
+<import src="../../zanui/dist/field/index.wxml" />
+<view class="container">
+
+  <view class="publish-img-con">
+    <!-- <image  class='uploaded-img' src="{{src}}"></image> -->
+    <button id="upload" class='upload zan-btn zan-btn--small zan-btn--danger' bindtap='uploadFile'>上传信息</button>
+  </view>
+
+  <view class='input-item'>
+    <input class="phoneInput" type="text"  maxlength="30" placeholder="请输入职位" bindinput="postInput" />
+  </view>
+
+  <view class='input-item'>
+    <input class="phoneInput" type="number"  maxlength="11" placeholder="请输入电话号码" bindinput="phoneInput" />
+  </view>
+
+  <view wx:if="{{notLookWork}}" class='input-item'>
+    <input class="phoneInput" type="number"  maxlength="3" placeholder="应聘人数" bindinput="personNumInput" />
+  </view>
+
+  <view class='input-item'>
+    <input class="phoneInput" type="text"  maxlength="30" placeholder="福利待遇" bindinput="welfareInput" />
+  </view>
+
+  <view wx:if="{{notLookWork}}" class="picker-item">
+    <picker bindchange="educationPickerChange" value="{{educationIndex}}" range="{{educationArray}}">
+      <view class="picker">
+        学历要求：{{educationArray[educationIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- <view class="picker-item">
+    <picker bindchange="welfarePickerChange" value="{{welfareIndex}}" range="{{welfareArray}}">
+      <view class="picker">
+        福利待遇：{{welfareArray[welfareIndex]}}
+      </view>
+    </picker>
+  </view> -->
+
+  <view wx:if="{{notLookWork}}" class="picker-item ">
+    <picker bindchange="agePickerChange" value="{{ageIndex}}" range="{{ageArray}}">
+      <view class="picker">
+        工作年限：{{ageArray[ageIndex]}}
+      </view>
+    </picker>
+  </view>
+
+    <view class="picker-item border-bm">
+    <picker bindchange="payPickerChange" value="{{payIndex}}" range="{{payArray}}">
+      <view class="picker">
+        每月薪资：{{payArray[payIndex]}}
+      </view>
+    </picker>
+  </view>
+
+   <view class="zan-cell zan-cell--access" bindtap='getLocation'>
+    <view class="zan-cell__bd">位置</view>
+    <view class="zan-cell__ft"></view>
+  </view> 
+
+    <textarea class='publish-textarea' bindinput='textInput' maxlength="2000" placeholder="请输入职位描述信息"></textarea>
+
+    <zan-field
+  title="{{ field.title }}"
+  placeholder="{{ field.placeholder }}"
+  focus="{{ field.focus }}"
+  value="{{ field.value }}"
+  bind:change="handleFieldChange"
+  class="hide"
+>
+</zan-field>
+
+  <!-- <view class="zan-cell zan-cell--switch hide">
+    <view class="zan-cell__bd">发福利</view>
+    <view class="zan-cell__ft">
+      <template is="zan-switch" data="{{ checked }}" />
+    </view>
+  </view> -->
+
+  <button bindtap='publishInfo' class='zan-btn  zan-btn--danger'>发布</button>
+</view>

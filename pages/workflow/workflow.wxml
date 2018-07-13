@@ -1,0 +1,12 @@
+<!--index.wxml-->
+
+<view class="workflow-bg">
+    <view class='adu-text'>WE    NEED  YOU</view>
+    <view class='flow-content'>
+        <input class='input-item'  bindinput="nameInput" maxlength='20'  placeholder='姓名'></input>
+        <input class='input-item' bindinput="idNoInput" maxlength='20'  placeholder='应聘职位'></input>
+        <input class='input-item' bindinput="phoneInput" maxlength='11' type='number'  placeholder='联系方式'></input>
+        <input class='input-item hide' bindinput="phoneInput" placeholder='待遇要求'></input>
+        <button bindtap="addWorkFlow">确认提交</button>
+    </view>
+</view>

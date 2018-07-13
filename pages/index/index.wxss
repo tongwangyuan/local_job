@@ -1,0 +1,33 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.statistics{
+  height: 30px;
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  align-items: center;
+  font-size: 12px;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+.statistics view{
+  margin: 0 10px;
+}
+.t-publish{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.picker-icon{
+  font-size: 35px;
+}
+.menu-icon{
+  color: #ff4343; font-size:24px;margin: 20px 20px 5px 20px;
+}

@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<import src="../../zanui/dist/tab/index.wxml" />
+<import src="../../zanui/dist/dialog/index.wxml" />
+<view class="pageBackground">
+  <swiper class="t-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="item">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image t-swiper-img" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="t-menu whiteBackground clearfix">
+    <view class="t-menu-warp" wx:for="{{menus}}" wx:for-item="menu" wx:key="menuId" bindtap='menuclick' id="{{menu.menuId}}">
+      <!-- <view class="zan-icon zan-icon-{{ menu.icon }}" style="color: #ff4343;"></view> -->
+      <view class="menu-icon iconfont icon-{{ menu.icon }}"></view>
+      <view class="icon-classname m-b-20">{{ menu.name }}</view>
+    </view>
+  </view>
+
+  <view class='statistics whiteBackground m-v-10'>
+    <view class=''>浏览：{{browerCount}}</view>
+    <view class=''>发布：{{publishCount}}</view>
+    <view class=''>评论：{{commentCount}}</view>
+  </view>
+
+  <view class='t-tabs m-v-10'>
+    <template is="zan-tab" data="{{...tabs, componentId: 'tab1' }}"></template>
+  </view>
+
+  <view class="t-infos">
+    <info-card info="{{info}}" zan-btn='zan-btn'  zan-small='zan-btn--small' zan-danger='zan-btn--danger' zan-icon='zan-icon' zan-icon-location='zan-icon-location' zan-icon-browsing-history='zan-icon-browsing-history' zan-icon-pending-evaluate='zan-icon-pending-evaluate' zan-icon-like-o='zan-icon-like-o' zan-icon-share='zan-icon-share' wx:for="{{infos}}" wx:key="id" wx:for-item="info"></info-card>
+    <!-- <view class="t-info-item m-v-10 whiteBackground" wx:for="{{infos}}" wx:key="id" wx:for-item="info" bindtap='gotoInfoDetail' data-info-id="{{info.id}}">
+      <view class="t-info-header">
+        <image class="t-info-icon" catchtap='gotoUserInfo' src="{{info.logoPath}}"></image>
+        <view class="t-info-name" catchtap='gotoUserInfo'>
+          <text>{{info.nikeName}}</text>
+          <text>{{info.createTime}}</text>
+        </view>
+        <button class="t-info-call zan-btn zan-btn--small zan-btn--danger" catchtap='callPhone'>联系Ta</button>
+      </view>
+
+      <view class="t-info-body">
+        <view class="zan-panel">
+          <view>{{info.messageContent}}</view>
+        </view>
+      </view>
+      <view class="t-info-position">
+        <icon class='zan-icon zan-icon-location'></icon>
+        <text>{{info.address}}</text>
+      </view>
+      <view class="t-info-footer">
+        <view class='t-info-footer-browser'>
+          <icon class='zan-icon zan-icon-browsing-history'></icon>
+          <text>{{info.viewNumber}}</text>
+        </view>
+        <view class='t-info-footer-comment'>
+          <icon class='zan-icon zan-icon-pending-evaluate'></icon>
+          <text>{{info.commentNumber}}</text>
+        </view>
+        <view class='t-info-footer-zan' data-zan-id="{{info.id}}" catchtap='zan'>
+          <icon class='zan-icon zan-icon-like-o'></icon>
+          <text>{{info.praiseNumber}}</text>
+        </view>
+        <view class='t-info-footer-share' catchtap='stopEvent'>
+          <icon class='zan-icon zan-icon-share'></icon>
+          <button class='btn-share zan-btn zan-btn--small' open-type="share">分享</button>
+        </view>
+      </view>   
+      <view class="t-info-comment">
+        <view class='t-info-comment-item' wx:for="{{info.commentList}}" wx:key="id" wx:for-item="infoItem">
+          <view wx:if="{{infoItem.replayPerson}}">
+            <text class='t-info-comment-user'>{{infoItem.nikeName}}</text>回复 <text class='t-info-comment-user'>{{infoItem.replayPerson}}</text>
+            <text class='t-info-comment-text'>{{infoItem.commentContent}}</text>
+          </view>
+          <view wx:else>
+              <text class='t-info-comment-user'>{{infoItem.nikeName}}:</text>
+              <text class='t-info-comment-text'>{{infoItem.commentContent}}</text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+
+  <view class="t-publish" style="color: green;">
+    <picker mode="multiSelector" bindcolumnchange="columnchange" bindchange="bindPickerChange" value="{{multiIndex}}" range="{{menuMul}}">
+      <!-- <view class="picker zan-icon zan-icon-edit"></view> -->
+      <view class="picker picker-icon iconfont icon-plus-circle"></view>
+    </picker>
+  </view>
+  <!-- <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button> -->
+</view>
+<template is="zan-dialog" data="{{ zanDialog }}" ></template>

@@ -1,0 +1,95 @@
+<import src="../../zanui/dist/popup/index.wxml" />
+<view class="">
+
+  <view class="t-infos">
+    <view class="t-info-item">
+      <view class="t-info-header">
+        <image class="t-info-icon" bindtap='gotoUserInfo' src="{{info.logoPath}}"></image>
+        <view class="t-info-name" bindtap='gotoUserInfo'>
+          <text>{{info.nikeName}}</text>
+          <text>{{info.createTime}}</text>
+        </view>
+        <button class="t-info-call zan-btn zan-btn--small zan-btn--danger hide" bindtap='callPhone'>联系Ta</button>
+      </view>
+
+      <view class="t-info-body">
+        <view class="zan-panel border-none">
+          <!-- <view bindtap='gotoInfoDetail'>{{info.messageContent}}</view> -->
+          <!-- <view class='space-text'><text decode="{{true}}"><text class='t-info-type'>{{info.displayLabel}}</text>&nbsp;<text class='t-info-type'>{{info.jobName}}</text>&nbsp;<text wx:if="{{info.messageType ==='1'}}" class='t-info-type'>{{info.employeeNum}}</text>&nbsp;<text wx:if="{{info.messageType ==='1'}}" class='t-info-type'>{{info.salary}}</text>&nbsp;<text class='t-info-type' wx:if="{{info.messageType ==='1'}}">{{info.jobNeeds}}</text>&nbsp;</text>{{info.messageContent}}</view> -->
+
+          <view class='space-text'><text decode="{{true}}"><text class='t-info-type hide'>{{info.displayLabel}}</text><text class='t-jobName'>{{info.jobName}}</text>\n<text wx:if="{{info.messageType ==='1'}}" class='t-info-type'>{{info.employeeNum}}</text><text class='t-info-type'>{{info.salary}}</text><text class='t-info-type' wx:if="{{info.messageType ==='1'}}">{{info.jobNeeds}}</text><text class='t-info-type' wx:if="{{info.messageType ==='1'}}">{{info.workYears}}</text><text class='t-info-type'>{{info.welfare}}</text>\n{{info.messageContent}}</text></view>
+        </view>
+      </view>
+      <view class="t-info-position">
+        <icon class='zan-icon zan-icon-location'></icon>
+        <text>{{info.address}}</text>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class='comment-area'>
+    <view class="comment-area-header">全部评论({{info.commentList.length}})</view>
+    <view class="t-info-comment">
+      <view class='t-info-comment-item' wx:for="{{info.commentList}}" wx:key="id" wx:for-item="commentItem">
+        <view wx:if="{{commentItem.replayPerson}}">
+          <text class='t-info-comment-user'>{{commentItem.nikeName}}:</text>回复
+          <text class='t-info-comment-user'>{{commentItem.replayPerson}}</text>
+          <text class='t-info-comment-text'>{{commentItem.commentContent}}</text>
+          <icon class='zan-icon zan-icon-pending-evaluate t-info-comment-replay' id='{{commentItem.id}}' bindtap='toggleBottomPopup'></icon>
+        </view>
+        <view wx:else>
+          <text class='t-info-comment-user'>{{commentItem.nikeName}}:</text>
+          <text class='t-info-comment-text'>{{commentItem.commentContent}}</text>
+          <icon class='zan-icon zan-icon-pending-evaluate t-info-comment-replay' id='{{commentItem.id}}' bindtap='toggleBottomPopup'></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='detail-info-footer'>
+    <view class='footer-back' bindtap='goHome'>
+      <icon class='zan-icon zan-icon-wap-home'></icon>
+      <text>首页</text>
+    </view>
+    <!-- <view class='footer-share'>
+      <icon class='zan-icon zan-icon-passed'></icon>
+      <text>分享</text>
+    </view> -->
+    <view class='footer-comment' bindtap='toggleBottomPopup'>
+      <icon class='zan-icon zan-icon-pending-evaluate'></icon>
+      <text>评论</text>
+    </view>
+    <view class='footer-praise' bindtap='zan'>
+      <icon class='zan-icon zan-icon-like-o'></icon>
+      <text>{{info.praiseNumber}}</text>
+    </view>
+    <view class='footer-share-area'>
+       <button open-type="share"  data-jobid='{{info.id}}'>分享</button> 
+    </view>
+    <view class='footer-callphone' bindtap='callPhone'>
+      联系他
+    </view>
+  </view>
+
+  <view class="popup-example--top zan-popup zan-popup--top {{ showBottomPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" catchtap="toggleBottomPopup"></view>
+    <view class="zan-popup__container">
+      <view class="popup-header">
+        <text>评论</text>
+        <button class="zan-btn zan-btn--small " catchtap="toggleBottomPopup">
+          关闭
+        </button>
+      </view>
+      <view>
+        <textarea class='comment-textarea' placeholder='{{placeholder}}' bindinput="textareaInput" maxlength='2000'  value="{{commentInfo}}"></textarea>
+      </view>
+      <view class='clearfix'>
+        <button class="zan-btn zan-btn--small  zan-btn--danger send-comment" bindtap='sendComment'>
+          发送
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
